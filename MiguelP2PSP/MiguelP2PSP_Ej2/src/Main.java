@@ -69,12 +69,7 @@ public class Main {
 					}
 					synchronized(listaClassB.get(0)){
 						listaClassB.get(0).notify();						
-					}
-					synchronized(listaClassB){
-						if(classA.isFinished()) {
-							listaClassB.notify();							
-						}												
-					}					
+					}				
 					while(!classA.isFinished());
 					if(classA.isFinished()) {	
 						classA.listarHilos();
